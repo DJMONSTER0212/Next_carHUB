@@ -8,8 +8,9 @@ const Hero = () => {
 
   }
   return (
-    <div className='hero'>
-      <div className='flex-1 pt-36 padding-x'>
+    <div className='hero '>
+      <div className='row padding-x'>
+      <div className='flex-1 pt-36  col-lg-6 col-md-6'>
         <h1 className='hero__title'>Find, Book, or Rent a Car -- quickly and easily!</h1>
         <p className='hero__subtitle'>Streamline your car rental experience with our effortless booking process.</p>
 
@@ -19,12 +20,13 @@ const Hero = () => {
           handleClick={handleScroll}
         />
       </div>
-      <div className='hero__image-container'>
+      <div className='hero__image-container col-lg-6 col-md-6'>
         <div className='hero__image'>
           <Image src="/hero.png" alt='hero ' fill className='object-contain'/>
-          <div className='hero__image-overlay'/>
         </div>
+          <div className='hero__image-overlay'/>
       </div>
+    </div>
     </div>
   )
 }
