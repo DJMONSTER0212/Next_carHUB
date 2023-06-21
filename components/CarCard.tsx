@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react'
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 import CarDetails from './CarDetails';
 interface CarCardProps{
     car: CarProps
@@ -32,7 +32,7 @@ const CarCard = ({car}:CarCardProps) => {
       </p>
 
       <div className='relative w-full h-40 my-3 object-contain'>
-            <Image src={"/hero.png"} alt='car-image' fill priority className='object-contain'/>
+            <Image src="/hero.png" alt='car-image' fill priority className='object-contain'/>
       </div>
       <div className='relative flex w-full mt-2'>
         <div className='flex group-hover:invisible w-full justify-between text-gray'>
@@ -65,7 +65,7 @@ const CarCard = ({car}:CarCardProps) => {
             />
         </div>
       </div>
-      <CarDetails/>
+      <CarDetails isOpen ={isOpen} closeModal = {()=>setIsOpen(false)} car={car}/>
     </div>
   )
 }
